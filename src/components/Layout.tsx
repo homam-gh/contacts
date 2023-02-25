@@ -1,4 +1,4 @@
-import { PropsWithChildren } from "react";
+import ActiveLetterProvider from "../context/ActiveLetterProvider";
 import { DataProvider } from "../context/ContactsProvider";
 import ContactsList from "./ContactsList";
 import Header from "./Header";
@@ -10,12 +10,14 @@ import Toast from "./Toast";
 const Layout = () => {
   return (
     <DataProvider>
-      <main className={styles.main}>
-        <Header />
-        <Tabs />
-        <ContactsList />
-      </main>
-      <Toast type="info" message="" />
+      <ActiveLetterProvider>
+        <main className={styles.main}>
+          <Header />
+          <Tabs />
+          <ContactsList />
+        </main>
+        <Toast type="info" message="" />
+      </ActiveLetterProvider>
     </DataProvider>
   );
 };

@@ -1,4 +1,3 @@
-import { loadavg } from "os";
 import { useContext } from "react";
 import { DataContext } from "../context/ContactsProvider";
 import Loader from "./Loader";
