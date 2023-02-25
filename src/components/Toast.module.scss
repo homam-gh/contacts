@@ -1,0 +1,29 @@
+.toastContainer {
+  position: fixed;
+  right: 0;
+  top: 0;
+
+  .toast {
+    // border: 2px solid $secondary;
+    color: $black;
+    max-width: 300px;
+    margin: $gutter;
+    padding: $gutter;
+
+    &.warning {
+      background: lighten($warning, 0.35);
+    }
+    &.info {
+      background: lighten($info, 0.35);
+    }
+    &.error {
+      background: lighten($danger, 0.35);
+    }
+    &.success {
+      background: lighten($success, 0.35);
+    }
+    &.secondary {
+      background: lighten($secondary, 0.35);
+    }
+  }
+}

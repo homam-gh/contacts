@@ -1,9 +1,6 @@
-export const env = import.meta.env;
-
 export const configs = {
   title: "Contact List",
-  baseURL: env.BASE_URL,
-  APIURL: env.API_URL,
+  APIURL: "https://api.randomuser.me",
   numberCards: 120,
   tabs: [
     "a",
