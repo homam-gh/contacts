@@ -1,27 +1,29 @@
 import { useContext, useEffect, useState } from "react";
 import { ActiveLetterContext } from "../context/ActiveLetterProvider";
 import { DataContext } from "../context/ContactsProvider";
-import { Person } from "../interfaces/contactInterface";
 import { getTabLetters } from "../utils/getTabLetters";
 import LetterTab from "./LetterTab";
 
 const Tabs = () => {
   const { data } = useContext(DataContext);
-  const [letters, setLetters] = useState<string[]>([]);
-  const { activeLetter, setActiveLetter } = useContext(ActiveLetterContext);
+  const [letters, setLetters] = useState<{ letter: string; count: number }[]>(
+    []
+  );
+  const { setActiveLetter } = useContext(ActiveLetterContext);
 
   useEffect(() => {
     if (!data?.results?.length) return;
-    setLetters(getTabLetters(data.results).sort());
-    setActiveLetter(letters[0]);
+    const lettersList = getTabLetters(data.results);
+    setLetters(lettersList);
+    setActiveLetter(lettersList[0].letter);
   }, [data]);
 
   return (
     <nav>
       <ul>
-        {letters.map((letter) => (
-          <li key={letter}>
-            <LetterTab title={letter} />
+        {letters.map((l) => (
+          <li key={l.letter}>
+            <LetterTab {...l} />
           </li>
         ))}
       </ul>

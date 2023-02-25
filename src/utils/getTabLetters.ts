@@ -1,16 +1,28 @@
 import { Person } from "../interfaces/contactInterface";
 
-export const getTabLetters = (arr: Person[]): string[] => {
-  const letters: string[] = [];
-  const set: Set<string> = new Set();
+export const getTabLetters = (
+  arr: Person[]
+): { letter: string; count: number }[] => {
+  const letters: { letter: string; count: number }[] = [];
 
   arr.forEach((person) => {
     const firstLetter = person.name.first.charAt(0).toUpperCase();
-    if (set.has(firstLetter)) {
-      return;
+    const letterObj = letters.find((obj) => obj.letter === firstLetter);
+    if (letterObj) {
+      letterObj.count++;
+    } else {
+      letters.push({ letter: firstLetter, count: 1 });
     }
-    set.add(firstLetter);
-    letters.push(firstLetter);
+  });
+
+  letters.sort((a, b) => {
+    if (a.letter < b.letter) {
+      return -1;
+    }
+    if (a.letter > b.letter) {
+      return 1;
+    }
+    return 0;
   });
 
   return letters;

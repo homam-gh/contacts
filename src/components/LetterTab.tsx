@@ -1,16 +1,16 @@
 import { useContext } from "react";
 import { ActiveLetterContext } from "../context/ActiveLetterProvider";
 
-const LetterTab = ({ title }: { title: string }) => {
+const LetterTab = ({ letter, count }: { letter: string; count: number }) => {
   const { activeLetter, setActiveLetter } = useContext(ActiveLetterContext);
 
   return (
     <button
       type="button"
-      onClick={() => setActiveLetter(title)}
-      disabled={activeLetter === title}
+      onClick={() => setActiveLetter(letter)}
+      disabled={activeLetter === letter}
     >
-      {title}
+      {letter}, {count}
     </button>
   );
 };
