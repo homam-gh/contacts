@@ -1,6 +1,11 @@
+// normalize and simple reset
 // Reset box-sizing to content-box for all elements
 * {
-  box-sizing: border-box;
+  &,
+  &::after,
+  &::before {
+    box-sizing: border-box;
+  }
 }
 
 // Remove margin and padding on all elements
