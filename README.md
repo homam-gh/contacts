@@ -1,4 +1,4 @@
-# Robotalife Front App
+# Contacts Code Challenge
 
 ## Project setup
 
