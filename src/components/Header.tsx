@@ -1,7 +1,9 @@
+import styles from "./Header.module.scss";
+
 const Header = () => {
   return (
-    <header>
-      <h2>Contacts List</h2>
+    <header className={styles.header}>
+      <h2 className={styles.pageTitle}>Contacts List</h2>
     </header>
   );
 };
