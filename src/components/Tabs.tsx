@@ -13,7 +13,7 @@ const Tabs = () => {
 
   useEffect(() => {
     if (!data?.results?.length) return;
-    const lettersList = getTabLetters(data.results);
+    const lettersList = getTabLetters(data.groupedResults);
     setLetters(lettersList);
     setActiveLetter(lettersList[0].letter);
   }, [data]);

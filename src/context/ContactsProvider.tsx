@@ -3,14 +3,22 @@ import { configs } from "../config";
 import { Person } from "../interfaces/contactInterface";
 import { Info } from "../interfaces/info";
 import { get } from "../services/api";
+import {
+  GroupedPersons,
+  groupPersonsByFirstLetter,
+} from "../utils/getGroupedPersons";
 
 interface RndUserRrsponse {
   info: Info;
   results: Person[];
 }
 
+interface GroupedResponse extends RndUserRrsponse {
+  groupedResults: GroupedPersons;
+}
+
 interface Context {
-  data: RndUserRrsponse;
+  data: GroupedResponse;
   isLoading: boolean;
   error: Error | null;
 }
@@ -18,14 +26,15 @@ interface Context {
 const DataContext = createContext<Context>({
   data: {
     info: {} as Info,
-    results: [] as Person[],
+    results: [],
+    groupedResults: {},
   },
   isLoading: false,
   error: null,
 });
 
 const DataProvider = ({ children }: PropsWithChildren) => {
-  const [data, setData] = useState<RndUserRrsponse>({} as RndUserRrsponse);
+  const [data, setData] = useState<GroupedResponse>({} as GroupedResponse);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<Error | null>(null);
 
@@ -37,7 +46,10 @@ const DataProvider = ({ children }: PropsWithChildren) => {
           `${configs.APIURL}?results=120`
         );
 
-        setData(response.data);
+        setData({
+          ...response.data,
+          groupedResults: groupPersonsByFirstLetter(response.data.results),
+        });
       } catch (error) {
         setError(error);
       }

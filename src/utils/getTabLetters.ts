@@ -1,29 +1,13 @@
-import { Person } from "../interfaces/contactInterface";
+import { GroupedPersons } from "./getGroupedPersons";
 
 export const getTabLetters = (
-  arr: Person[]
+  obj: GroupedPersons
 ): { letter: string; count: number }[] => {
-  const letters: { letter: string; count: number }[] = [];
+  const output: { letter: string; count: number }[] = [];
 
-  arr.forEach((person) => {
-    const firstLetter = person.name.first.charAt(0).toUpperCase();
-    const letterObj = letters.find((obj) => obj.letter === firstLetter);
-    if (letterObj) {
-      letterObj.count++;
-    } else {
-      letters.push({ letter: firstLetter, count: 1 });
-    }
+  Object.keys(obj).forEach((key) => {
+    output.push({ letter: key, count: obj[key].length });
   });
 
-  letters.sort((a, b) => {
-    if (a.letter < b.letter) {
-      return -1;
-    }
-    if (a.letter > b.letter) {
-      return 1;
-    }
-    return 0;
-  });
-
-  return letters;
+  return output;
 };
