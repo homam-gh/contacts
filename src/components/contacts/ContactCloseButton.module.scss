@@ -1,7 +1,9 @@
 .close {
+  align-items: center;
   color: $secondary;
   display: flex;
   height: 2em;
+  justify-content: center;
   right: 0.5em;
   position: absolute;
   top: 0.5em;

@@ -1,0 +1,19 @@
+.itemWrapper {
+  align-items: start;
+  display: flex;
+}
+
+.title {
+  color: $dark;
+  font-size: 0.85em;
+  font-weight: 700;
+  width: 5em;
+}
+
+.item {
+  color: $secondary;
+  display: block;
+  font-size: 0.85em;
+  font-weight: 600;
+  text-decoration: none;
+}

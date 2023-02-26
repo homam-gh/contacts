@@ -7,6 +7,8 @@ import {
   GroupedPersons,
   groupPersonsByFirstLetter,
 } from "../utils/getGroupedPersons";
+import { toast } from "react-toastify";
+import toastGlobalConfig from "../shared/toastConfig";
 
 interface RndUserRrsponse {
   info: Info;
@@ -52,7 +54,12 @@ const DataProvider = ({ children }: PropsWithChildren) => {
           ...response.data,
           groupedResults,
         });
+        toast("Contacts successfully loaded!", toastGlobalConfig);
       } catch (error) {
+        toast(
+          "Something went wrong please try refreshing the page!",
+          toastGlobalConfig
+        );
         setError(error);
       }
       setIsLoading(false);
