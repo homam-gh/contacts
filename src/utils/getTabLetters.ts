@@ -6,7 +6,7 @@ export const getTabLetters = (
   const output: { letter: string; count: number }[] = [];
 
   Object.keys(obj).forEach((key) => {
-    output.push({ letter: key, count: obj[key].length });
+    output.push({ letter: key, count: obj[key].persons.length });
   });
 
   return output;

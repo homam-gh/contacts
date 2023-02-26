@@ -1,7 +1,10 @@
 import { Person } from "../interfaces/contactInterface";
 
 export interface GroupedPersons {
-  [letter: string]: Person[];
+  [letter: string]: {
+    isActive: boolean;
+    persons: Person[];
+  };
 }
 
 export const groupPersonsByFirstLetter = (
@@ -13,15 +16,18 @@ export const groupPersonsByFirstLetter = (
     const firstLetter = person.name.first.charAt(0).toUpperCase();
 
     if (!groupedPersons[firstLetter]) {
-      groupedPersons[firstLetter] = [];
+      groupedPersons[firstLetter] = {
+        isActive: false,
+        persons: [],
+      };
     }
 
-    groupedPersons[firstLetter].push(person);
+    groupedPersons[firstLetter].persons.push(person);
   });
 
   // Sort the array of persons within each letter group
   for (const letter in groupedPersons) {
-    groupedPersons[letter].sort((a, b) =>
+    groupedPersons[letter].persons.sort((a, b) =>
       a.name.first.localeCompare(b.name.first)
     );
   }
@@ -34,6 +40,10 @@ export const groupPersonsByFirstLetter = (
   sortedLetters.forEach((letter) => {
     result[letter] = groupedPersons[letter];
   });
+
+  const firstLetter = Object.keys(result)[0];
+
+  result[firstLetter].isActive = true;
 
   return result;
 };
