@@ -13,7 +13,7 @@ export interface Person {
   nat: string;
 }
 
-interface Name {
+export interface Name {
   title: string;
   first: string;
   last: string;
@@ -69,7 +69,7 @@ interface Id {
   value: string | null;
 }
 
-interface Picture {
+export interface Picture {
   large: string;
   medium: string;
   thumbnail: string;

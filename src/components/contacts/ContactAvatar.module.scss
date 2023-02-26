@@ -1,0 +1,8 @@
+.avatar {
+  border: 3px solid $white;
+  border-radius: 50%;
+  box-shadow: 0 0 10px 0 lighten($black, 65%);
+  height: 4em;
+  overflow: hidden;
+  width: 4em;
+}

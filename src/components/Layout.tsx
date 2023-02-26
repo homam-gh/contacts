@@ -1,5 +1,6 @@
 import ActiveLetterProvider from "../context/ActiveLetterProvider";
 import { DataProvider } from "../context/ContactsProvider";
+import ContactCard from "./contacts/ContactCard";
 import ContactsList from "./contacts/ContactsList";
 import Header from "./Header";
 

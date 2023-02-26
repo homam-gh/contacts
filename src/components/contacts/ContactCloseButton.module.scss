@@ -1,0 +1,14 @@
+.close {
+  color: $secondary;
+  display: flex;
+  height: 2em;
+  right: 0.5em;
+  position: absolute;
+  top: 0.5em;
+  width: 2em;
+
+  svg {
+    height: 60%;
+    width: 60%;
+  }
+}
