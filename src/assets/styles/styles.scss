@@ -82,3 +82,11 @@ button {
 :focus {
   outline: none;
 }
+
+// normalizing finishes here
+// common and global styles starts here
+
+html,
+body {
+  height: 100%;
+}

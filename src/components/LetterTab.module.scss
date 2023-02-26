@@ -1,0 +1,25 @@
+.tab {
+  align-items: center;
+  border-bottom: 1px solid $light;
+  display: flex;
+  font-size: 0.85em;
+  height: 2.5em;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+
+  &.isActive {
+    color: $dark;
+    background-color: $info;
+  }
+
+  .letterTitle {
+  }
+
+  .count {
+    bottom: 0;
+    font-size: 0.65em;
+    position: absolute;
+    right: 0.15em;
+  }
+}

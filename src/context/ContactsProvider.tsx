@@ -43,7 +43,7 @@ const DataProvider = ({ children }: PropsWithChildren) => {
       setIsLoading(true);
       try {
         const response = await get<RndUserRrsponse>(
-          `${configs.APIURL}?results=10`
+          `${configs.APIURL}?results=200`
         );
 
         const groupedResults = groupPersonsByFirstLetter(response.data.results);

@@ -1,0 +1,11 @@
+.tabsContainer {
+  background: lighten($secondary, 35%);
+  grid-area: tabs;
+  height: 100%;
+  overflow: hidden;
+
+  .tabs {
+    height: 100%;
+    overflow-y: auto;
+  }
+}

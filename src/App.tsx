@@ -4,7 +4,7 @@ import ErrorBoundary from "./shared/ErrorBoundary";
 function App() {
   return (
     <ErrorBoundary>
-      <Layout />;
+      <Layout />
     </ErrorBoundary>
   );
 }

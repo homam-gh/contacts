@@ -4,6 +4,8 @@ import { DataContext } from "../context/ContactsProvider";
 import Contact from "./Contact";
 import Loader from "./Loader";
 
+import styles from "./ContactsList.module.scss";
+
 const ContactsList = () => {
   const { data, error, isLoading } = useContext(DataContext);
   const { activeLetter } = useContext(ActiveLetterContext);
@@ -17,13 +19,15 @@ const ContactsList = () => {
   }
 
   return (
-    <ul>
-      {data.groupedResults[activeLetter]?.persons.map((person) => (
-        <li key={person.login.uuid}>
-          <Contact person={person} />
-        </li>
-      ))}
-    </ul>
+    <div className={styles.contactsListContainer}>
+      <ul className={styles.contactsList}>
+        {data.groupedResults[activeLetter]?.persons.map((person) => (
+          <li key={person.login.uuid} className={styles.contactWrapper}>
+            <Contact person={person} />
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 };
 

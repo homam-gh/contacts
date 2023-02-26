@@ -4,6 +4,8 @@ import { DataContext } from "../context/ContactsProvider";
 import { getTabLetters } from "../utils/getTabLetters";
 import LetterTab from "./LetterTab";
 
+import styles from "./Tabs.module.scss";
+
 const Tabs = () => {
   const { data } = useContext(DataContext);
   const [letters, setLetters] = useState<{ letter: string; count: number }[]>(
@@ -19,10 +21,10 @@ const Tabs = () => {
   }, [data]);
 
   return (
-    <nav>
-      <ul>
+    <nav className={styles.tabsContainer}>
+      <ul className={styles.tabs}>
         {letters.map((l) => (
-          <li key={l.letter}>
+          <li key={l.letter} className={styles.tab}>
             <LetterTab {...l} />
           </li>
         ))}
