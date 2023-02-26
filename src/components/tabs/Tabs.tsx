@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
-import { ActiveLetterContext } from "../context/ActiveLetterProvider";
-import { DataContext } from "../context/ContactsProvider";
-import { getTabLetters } from "../utils/getTabLetters";
+import { ActiveLetterContext } from "../../context/ActiveLetterProvider";
+import { DataContext } from "../../context/ContactsProvider";
+import { getTabLetters } from "../../utils/getTabLetters";
 import LetterTab from "./LetterTab";
 
 import styles from "./Tabs.module.scss";

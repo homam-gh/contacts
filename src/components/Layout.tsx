@@ -1,10 +1,10 @@
 import ActiveLetterProvider from "../context/ActiveLetterProvider";
 import { DataProvider } from "../context/ContactsProvider";
-import ContactsList from "./ContactsList";
+import ContactsList from "./contacts/ContactsList";
 import Header from "./Header";
 
 import styles from "./Layout.module.scss";
-import Tabs from "./Tabs";
+import Tabs from "./tabs/Tabs";
 import Toast from "./Toast";
 
 const Layout = () => {

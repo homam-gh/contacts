@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import { ActiveLetterContext } from "../context/ActiveLetterProvider";
-import { DataContext } from "../context/ContactsProvider";
+import { ActiveLetterContext } from "../../context/ActiveLetterProvider";
+import { DataContext } from "../../context/ContactsProvider";
+import Loader from "../Loader";
 import Contact from "./Contact";
-import Loader from "./Loader";
 
 import styles from "./ContactsList.module.scss";
 

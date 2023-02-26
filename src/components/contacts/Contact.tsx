@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Person } from "../interfaces/contactInterface";
+import { Person } from "../../interfaces/contactInterface";
 import ContactCard from "./ContactCard";
 
 const Contact = ({ person }: { person: Person }) => {

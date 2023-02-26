@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { ActiveLetterContext } from "../context/ActiveLetterProvider";
+import { ActiveLetterContext } from "../../context/ActiveLetterProvider";
 
 import styles from "./LetterTab.module.scss";
 
