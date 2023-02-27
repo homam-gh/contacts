@@ -1,5 +1,6 @@
 import { useCallback } from "react";
 import { toast } from "react-toastify";
+import { IconCopy } from "../../shared/icons";
 import toastGlobalConfig from "../../shared/toastConfig";
 import styles from "./ContactUserName.module.scss";
 
@@ -11,7 +12,7 @@ const ContactUserName = ({ user }: { user: string }) => {
 
   return (
     <div className={styles.username} tabIndex={1} onClick={copy}>
-      ({user})
+      ({user}) <IconCopy />
     </div>
   );
 };
