@@ -5,6 +5,7 @@ import styles from "./ContactCard.module.scss";
 import ContactCardTitle from "./ContactCardTitle";
 import ContactCloseButton from "./ContactCloseButton";
 import ContactDetails from "./ContactDetails";
+import ContactUserName from "./ContactUserName";
 
 const ContactCard = ({
   person,
@@ -37,6 +38,7 @@ const ContactCard = ({
       <ContactAvatar picture={person.picture} />
       <div className={styles.contentWrapper}>
         <ContactCardTitle {...{ name }} />
+        <ContactUserName user={person.login.username} />
         <ContactDetails {...{ person }} />
       </div>
     </div>
