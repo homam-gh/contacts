@@ -9,6 +9,14 @@
   top: 0;
   z-index: 20;
 
+  .logo {
+    margin: 0 1em;
+    svg {
+      width: 1.5em;
+      height: 1.5em;
+    }
+  }
+
   .pageTitle {
     font-size: 1.25em;
     margin: 0;

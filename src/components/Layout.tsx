@@ -2,7 +2,7 @@ import ActiveLetterProvider from "../context/ActiveLetterProvider";
 import { DataProvider } from "../context/ContactsProvider";
 import ContactsList from "./contacts/ContactsList";
 import Header from "./Header";
-import { toast, ToastContainer } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 
 import styles from "./Layout.module.scss";
 import Tabs from "./tabs/Tabs";
