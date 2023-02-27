@@ -8,21 +8,52 @@
 .contactsList {
   height: 100%;
   overflow-y: auto;
+}
+
+.contactWrapper {
+  position: relative;
+
+  &::after {
+    content: " ";
+    border-bottom: 1px solid lighten($secondary, 35%);
+    bottom: 0;
+    display: block;
+    left: 50%;
+    height: 0;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: calc(100% - ($gutter * 2));
+    z-index: 10;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .contactsListContainer {
+    --top-radius: 10px;
+
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    background: lighten($secondary, 35%);
+    height: 400px;
+    border: 1px solid lighten($secondary, 15%);
+    margin-top: -1px;
+    border-radius: 0 0 var(--top-radius) var(--top-radius);
+  }
+
+  .contactsList {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    position: relative;
+  }
 
   .contactWrapper {
-    position: relative;
+    position: static;
+    flex-basis: 50%;
 
     &::after {
-      content: " ";
-      border-bottom: 1px solid lighten($secondary, 35%);
-      bottom: 0;
-      display: block;
-      left: 50%;
-      height: 0;
-      position: absolute;
-      transform: translate(-50%, -50%);
-      width: calc(100% - ($gutter * 2));
-      z-index: 10;
+      display: none;
     }
   }
 }

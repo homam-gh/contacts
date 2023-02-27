@@ -8,11 +8,10 @@ import ContactDetails from "./ContactDetails";
 
 const ContactCard = ({
   person,
-  show,
+
   onClose,
 }: {
   person: Person;
-  show: boolean;
   onClose: () => void;
 }) => {
   const ref = useRef<HTMLDivElement>(null);
@@ -32,7 +31,6 @@ const ContactCard = ({
     };
   }, [ref]);
 
-  if (!show) return null;
   return (
     <div className={styles.contactCard} ref={ref}>
       <ContactCloseButton onClick={onClose} />

@@ -4,3 +4,16 @@
   text-align: start;
   width: 100%;
 }
+
+@media screen and (min-width: 768px) {
+  .contact {
+    width: 90%;
+    height: 100%;
+    border-bottom: 1px solid #000;
+    margin: 0 auto;
+
+    &.activeContact {
+      background: darken($light, 25%);
+    }
+  }
+}

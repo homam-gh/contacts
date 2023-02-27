@@ -7,3 +7,15 @@
   grid-template-rows: 3em 1fr;
   height: 100vh;
 }
+
+@media screen and (min-width: 768px) {
+  .main {
+    grid-template-areas:
+      "header"
+      "gap"
+      "tabs"
+      "list";
+    grid-template-columns: 1fr;
+    grid-template-rows: 3em 160px 50px 3fr;
+  }
+}
